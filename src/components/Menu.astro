@@ -1,0 +1,84 @@
+---
+interface MenuItem {
+  name: string;
+  price: string;
+  desc: string;
+  img: string;
+  alt: string;
+  featured?: boolean;
+}
+
+const menuItems: MenuItem[] = [
+  {
+    name: "Regular",
+    price: "$13",
+    desc: "Classic sourdough with a crisp crust and soft, chewy center.",
+    img: "/assets/img/gallery/fresh-from-the-oven.jpg",
+    alt: "Regular sourdough loaf, golden crust close-up",
+  },
+  {
+    name: "Blueberry",
+    price: "$18",
+    desc: "Juicy blueberries, real honey, and crunchy walnuts.",
+    img: "/assets/img/gallery/blueberry-sourdough.jpg",
+    alt: "Blueberry sourdough loaf",
+    featured: true,
+  },
+  {
+    name: "Jalapeño Cheddar",
+    price: "$16",
+    desc: "A perfect balance of heat and cheesy goodness.",
+    img: "/assets/img/gallery/jalapeno-cheddar.jpg",
+    alt: "Jalapeño cheddar sourdough loaf",
+  },
+  {
+    name: "Strawberry Chocolate",
+    price: "$18",
+    desc: "Sweet strawberries and rich chocolate in every bite.",
+    img: "/assets/img/gallery/strawberry-chocolate-smores.jpg",
+    alt: "Strawberry chocolate sourdough loaf topped with toasted marshmallows",
+    featured: true,
+  },
+  {
+    name: "Pumpkin",
+    price: "$15",
+    desc: "Warm spices and real pumpkin for a cozy, comforting flavor.",
+    img: "/assets/img/gallery/pumpkin-sourdough.jpg",
+    alt: "Pumpkin-shaped sourdough loaf",
+  },
+  {
+    name: "Chocolate Swirl",
+    price: "Ask Janie",
+    desc: "Rich chocolate swirled through a chewy sourdough crumb.",
+    img: "/assets/img/gallery/chocolate-swirl.jpg",
+    alt: "Chocolate swirl sourdough loaf",
+  },
+];
+---
+
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">The Menu</p>
+      <h2>Fresh-Baked Flavors</h2>
+    </div>
+    <p class="section-sub">Every loaf is made in small batches with real ingredients &mdash; handcrafted and made with love.</p>
+
+    <div class="menu-grid">
+      {menuItems.map((item) => (
+        <div class={`menu-card ${item.featured ? "featured" : ""}`}>
+          <div class="photo"><img src={item.img} alt={item.alt} loading="lazy" /></div>
+          <div class="card-body">
+            <h3>{item.name}</h3>
+            <span class="price">{item.price}</span>
+            <p class="desc">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="order-note">
+      Ready to order? Scan the code or send <a href="https://venmo.com/janyer" target="_blank" rel="noopener">$janyer on Venmo</a> &mdash; jump to <a href="#order">Order &amp; Contact</a>.
+    </p>
+  </div>
+</section>

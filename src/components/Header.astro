@@ -1,0 +1,28 @@
+---
+const navLinks = [
+  { href: "#menu", label: "Menu" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#classes", label: "Classes" },
+];
+---
+
+<header class="site-header">
+  <div class="container">
+    <a href="#top" class="brand">
+      <span class="crown">&#9813;</span>
+      <span class="brand-script">Queen Janie&rsquo;s</span>
+      <span class="brand-sub">Sourdough</span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        {navLinks.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+        <li><a href="#order" class="btn btn-primary">Order Now</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

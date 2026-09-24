@@ -1,0 +1,75 @@
+---
+const slides = [
+  {
+    img: "/assets/img/gallery/pumpkin-sourdough.jpg",
+    caption: "Pumpkin Sourdough",
+    alt: "Pumpkin-shaped sourdough loaf with a cinnamon stick stem",
+  },
+  {
+    img: "/assets/img/gallery/strawberry-chocolate-smores.jpg",
+    caption: "Strawberry Chocolate S'mores",
+    alt: "Strawberry chocolate sourdough topped with toasted marshmallows",
+  },
+  {
+    img: "/assets/img/gallery/blueberry-sourdough.jpg",
+    caption: "Blueberry Sourdough",
+    alt: "Blueberry sourdough loaf fresh from the oven",
+  },
+  {
+    img: "/assets/img/gallery/blueberry-sourdough-closeup.jpg",
+    caption: "Blueberry Sourdough, Up Close",
+    alt: "Close-up of blueberry sourdough loaf crust",
+  },
+  {
+    img: "/assets/img/gallery/jalapeno-cheddar.jpg",
+    caption: "Jalapeño Cheddar",
+    alt: "Jalapeño cheddar sourdough loaf",
+  },
+  {
+    img: "/assets/img/gallery/chocolate-swirl.jpg",
+    caption: "Chocolate Swirl",
+    alt: "Chocolate swirl sourdough loaf",
+  },
+  {
+    img: "/assets/img/gallery/classic-sourdough.jpg",
+    caption: "Classic Sourdough",
+    alt: "Classic sourdough loaf with a leaf scoring pattern",
+  },
+  {
+    img: "/assets/img/gallery/fresh-from-the-oven.jpg",
+    caption: "Fresh From the Oven",
+    alt: "Golden, crackling sourdough crust close-up",
+  },
+];
+---
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Fresh From the Oven</p>
+      <h2>A Peek Inside the Bakery</h2>
+    </div>
+    <p class="section-sub">A few of our favorite bakes, straight from the kitchen.</p>
+
+    <div class="slideshow" id="slideshow">
+      <div class="slide-frame">
+        {slides.map((slide, i) => (
+          <div class={`slide ${i === 0 ? "active" : ""}`} data-caption={slide.caption}>
+            <img src={slide.img} alt={slide.alt} loading="lazy" />
+          </div>
+        ))}
+
+        <div class="slide-controls">
+          <button class="slide-btn" id="prevSlide" aria-label="Previous photo">&#10094;</button>
+          <button class="slide-btn" id="nextSlide" aria-label="Next photo">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="slide-caption">
+        <div class="title" id="slideTitle">{slides[0].caption}</div>
+      </div>
+
+      <div class="slide-dots" id="slideDots"></div>
+    </div>
+  </div>
+</section>

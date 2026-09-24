@@ -31,16 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var prevBtn = document.getElementById("prevSlide");
   var nextBtn = document.getElementById("nextSlide");
 
-  var captions = [
-    "Pumpkin Sourdough",
-    "Strawberry Chocolate S'mores",
-    "Blueberry Sourdough",
-    "Blueberry Sourdough, Up Close",
-    "Jalapeño Cheddar",
-    "Chocolate Swirl",
-    "Classic Sourdough",
-    "Fresh From the Oven"
-  ];
+  var captions = slides.map(function (slide) {
+    return slide.getAttribute("data-caption") || "";
+  });
 
   var current = 0;
   var autoplayDelay = 5000;

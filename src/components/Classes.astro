@@ -1,0 +1,95 @@
+---
+const features = [
+  { icon: "&#127823;", title: "Your Own Starter", desc: "Take home a starter and learn how to feed and care for it." },
+  { icon: "&#9995;", title: "Hands-On", desc: "Mix, fold, shape, score, and bake your own loaf." },
+  { icon: "&#127838;", title: "Learn the Basics", desc: "Understand the process, from mixing to baking." },
+  { icon: "&#128161;", title: "Tricks &amp; Tips", desc: "Discover helpful tips for successful sourdough baking." },
+  { icon: "&#9825;", title: "An Experience", desc: "More than a class &mdash; fun, relaxing, and rewarding." },
+];
+
+const included = [
+  "All ingredients and supplies",
+  "Use of professional equipment",
+  "Your own sourdough starter",
+  "Step-by-step instruction",
+  "Printed recipe & handout",
+  "Tips, tricks & troubleshooting guide",
+  "Take home your loaf (and the knowledge to bake more!)",
+  "Small class size for personal attention",
+];
+
+const audience = ["Food Lovers", "Beginners", "Home Bakers", "Friends & Family", "Gift Givers"];
+---
+
+<section class="classes" id="classes">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Sourdough Class</p>
+      <h2>From Starter to Loaf</h2>
+    </div>
+    <p class="section-sub">Join Queen Janie for a hands-on sourdough class where you&rsquo;ll learn, create, and take home the skills to bake your own beautiful, homemade bread. Learn &middot; Bake &middot; Enjoy.</p>
+
+    <div class="class-price">
+      <div class="amount">
+        <strong>$100</strong>
+        <span>per person</span>
+      </div>
+    </div>
+
+    <div class="class-features">
+      {features.map((f) => (
+        <div class="class-feature">
+          <div class="icon" set:html={f.icon} />
+          <h4 set:html={f.title} />
+          <p set:html={f.desc} />
+        </div>
+      ))}
+    </div>
+
+    <div class="class-details">
+      <div>
+        <h3>What&rsquo;s Included</h3>
+        <ul class="included-list">
+          {included.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="class-info-card">
+        <div class="info-row">
+          <span class="icon">&#128197;</span>
+          <div>
+            <strong>Saturday, October 10th</strong>
+            <span>3:00 PM &middot; 2 Hour Class</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="icon">&#128205;</span>
+          <div>
+            <strong>325 Zinnia Avenue</strong>
+            <span>McAllen, TX</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="icon">&#128176;</span>
+          <div>
+            <strong>$100 per person</strong>
+            <span>Reserve your spot today</span>
+          </div>
+        </div>
+        <div class="class-cta">
+          <a href="#order" class="btn btn-forest">Reserve Your Spot</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="class-for">
+      <p class="handwritten" style="font-size:1.4rem;color:var(--gold-light);">The perfect class for&hellip;</p>
+      <div class="tags">
+        {audience.map((tag) => <span>{tag}</span>)}
+      </div>
+    </div>
+
+    <div class="flyer-link">
+      <a href="/assets/img/flyers/class-flyer.jpg" target="_blank" rel="noopener">View the full class flyer &rarr;</a>
+    </div>
+  </div>
+</section>

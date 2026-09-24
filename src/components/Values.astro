@@ -1,0 +1,19 @@
+---
+const values = [
+  { icon: "&#127806;", label: "Real Ingredients" },
+  { icon: "&#9825;", label: "Small Batches" },
+  { icon: "&#127838;", label: "Artisan Style" },
+  { icon: "&#127968;", label: "Homemade With Love" },
+];
+---
+
+<section class="values">
+  <div class="container">
+    {values.map((v) => (
+      <div class="value-item">
+        <span class="value-icon" set:html={v.icon} />
+        <span class="label">{v.label}</span>
+      </div>
+    ))}
+  </div>
+</section>
