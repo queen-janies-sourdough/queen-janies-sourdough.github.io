@@ -796,7 +796,7 @@ section {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
-.venmo-handle {
+.payment-handle {
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
   color: var(--maroon);
